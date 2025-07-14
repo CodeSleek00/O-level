@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="itstyle.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"> O level Preparation <p><a href="https://faizcomputerinstitute.com" target="_blank">By Faiz Computer Institute</a></p></div>
+        <div class="close-button" id="close-button" style="display: none;">&times;</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="">MCQs </a>
+                <div class="dropdown-content">
+                    <a href="../../Nielet.html">O Level</a>
+                    <a href="../../ccc.html">CCC</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ms-office.html">Shortcut Keys</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Libre Office Writer</a>
+                    <a href="excel.html">Libre Office Calc</a>
+                    <a href="powerpoint.html">Libre Office Impress</a>
+                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="languages.html">O Level</a>
+                <div class="dropdown-content">
+                    <a href="word.html">Information Technology</a>
+                    <a href="excel.html">Web Desiginig and Publishing</a>
+                    <a href="powerpoint.html">Python Programming</a>
+                    <a href="#">Internet Of things</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="practicalportal.html">Practical Portal</a>
+                <div class="dropdown-content">
+                    
+                    <a href=".html">M1-R5</a>
+                    <a href="../../htmlcompiler.html">M2-R5</a>
+                    <a href="../../pythoncompiler.html">M3-R5</a>
+                    <a href="../../ccompiler.html">M4-R5</a>
+                    <a href="../../practicalportal.html">More....</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="onlinenotes.html">Summary</a>
+                <div class="dropdown-content">
+                    <a href="olevel.html">O Level</a>
+                    <a href="ms-office.html">MS-Office</a>
+                    <a href="languages.html">Programming Languages</a>
+                </div>
+            </li>
+        </ul>
+    </nav> <!-- Main Quiz Container -->
+    <div class="container">
+        <div class="quiz-title"><br>M1-R5<br>(Information Technology Tools & Network Basics)<br>Mock Test 26</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="quiz"></div>
+        <button class="button" id="submitBtn" onclick="submitQuiz()" disabled>Submit Quiz</button>
+
+        <!-- Buttons for showing Correct and Incorrect answers -->
+        <button class="button" id="showCorrectBtn" onclick="showCorrectAnswers()" style="display:none;">Show Correct Answers</button>
+        <button class="button" id="showIncorrectBtn" onclick="showIncorrectAnswers()" style="display:none;">Show Incorrect Answers</button>
+
+        <div id="result" class="result-container" style="display: none;">
+            <div class="result-title">Quiz Results</div>
+            <div class="result-item" id="totalMarks"></div>
+            <div class="result-item" id="correctAnswers"></div>
+            <div class="result-item" id="wrongAnswers"></div>
+            <div class="result-item" id="attemptedQuestions"></div>
+            <div class="result-item" id="grade"></div>
+            <div class="result-item" id="questionResults"></div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>Useful Links</h2>
+    </div>
+    <script src="itscript.js"></script>
+    <script>
+const questions = [
+    {
+        question: "The gutter margin is added to:",
+        options: ["A. Left Margin when printing", "B. Right Margin when printing", "C. Left and Top when printing", "D. Top and Bottom for printing"],
+        correctAnswer: 3
+    },
+    {
+        question: "The expert system uses a ______ to select the most appropriate response.",
+        options: ["A. Inference engine", "B. Decision support system", "C. Knowledge base", "D. Data source"],
+        correctAnswer: 1
+    },
+    {
+        question: "The printer on which output is printed by light beam and particles of ink is:",
+        options: ["A. Character Printer", "B. Laser Printer", "C. Beam Printer", "D. Line Printer"],
+        correctAnswer: 1
+    },
+    {
+        question: "The symbol used to make a cell address as absolute is:",
+        options: ["A. #", "B. $", "C. %", "D. !"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which option helps us to send the same letter to different persons?",
+        options: ["A. Mail Merge", "B. Macros", "C. Multiple Letter", "D. Template"],
+        correctAnswer: 0
+    },
+    {
+        question: "The option used to join a number of cells and place the contents in the middle of the joined cell is:",
+        options: ["A. Format Cell dialog box and click merge cells", "B. Format cell dialog box, click merge cell and then center", "C. Right-click the selected cells, select format cell, and merge and center", "D. Formatting Tool Bar and click merge and center"],
+        correctAnswer: 3
+    },
+    {
+        question: "The main page of a website is called:",
+        options: ["A. Main Page", "B. Home Page", "C. Index Page", "D. Bookmark"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of the following does not have any limit on money transfer digitally?",
+        options: ["A. IMPS", "B. NEFT", "C. UPI", "D. RTGS"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following is not a search engine?",
+        options: ["A. Yahoo", "B. Bing", "C. Google", "D. Windows"],
+        correctAnswer: 3
+    },
+    {
+        question: "When a Text Box object is deleted from a slide:",
+        options: ["A. The object is deleted but a text box and text is left on the slide", "B. The text box and text both are deleted", "C. The text box is deleted and the text is pasted on the slide", "D. The text is deleted and the text box is pasted"],
+        correctAnswer: 1
+    },
+    {
+        question: "______ technique selects a sentence in LibreOffice.",
+        options: ["A. Single Click", "B. Double Click", "C. Triple Click", "D. None of these"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which of the following is found in LibreOffice Impress?",
+        options: ["A. Standard Tool Bar", "B. Single Toolbar", "C. Tabbed", "D. All of above"],
+        correctAnswer: 3
+    },
+    {
+        question: "______ is the maximum zoom in LibreOffice Calc.",
+        options: ["A. 400", "B. 500", "C. 300", "D. 600"],
+        correctAnswer: 3
+    },
+    {
+        question: "______ maps IP address with the domain name of sites.",
+        options: ["A. URL", "B. DNS", "C. MAC", "D. TCP"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which bank started Pocket Wallet?",
+        options: ["A. HDFC", "B. ICICI", "C. SBI", "D. BOB"],
+        correctAnswer: 1
+    },
+    {
+        question: "The cost of storing a bit is minimum in:",
+        options: ["A. Cache", "B. Register", "C. RAM", "D. Magnetic Disc"],
+        correctAnswer: 3
+    },
+    {
+        question: "IMPS stands for:",
+        options: ["A. Immediate Payment Service", "B. Internet Payment Service", "C. Internet Pay Service", "D. Internet Media Payment Service"],
+        correctAnswer: 0
+    },
+    {
+        question: "FTP is built on ______ architecture.",
+        options: ["A. P2P", "B. IM", "C. IRC", "D. Client-Server"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following holds the ROM, CPU, RAM, and expansion cards?",
+        options: ["A. Hard disk", "B. Floppy disk", "C. Motherboard", "D. None of the above"],
+        correctAnswer: 2
+    },
+    {
+        question: "RTGS stands for:",
+        options: ["A. Real Time Gross Sale", "B. Real Time Gross Settlement", "C. Real Time Group Service", "D. Real Time Growth Settlement"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which one of the following is volatile?",
+        options: ["A. Bubble Memory", "B. RAM", "C. ROM", "D. Magnetic Disc"],
+        correctAnswer: 1
+    },
+    {
+        question: "World’s first supercomputer, CRAY-1, was developed in the year:",
+        options: ["A. 1975", "B. 1976", "C. 1999", "D. 1980"],
+        correctAnswer: 1
+    },
+    {
+        question: "The number of bits used to store a BCD digit is:",
+        options: ["A. 2", "B. 4", "C. 6", "D. 8"],
+        correctAnswer: 1
+    },
+    {
+        question: "In LibreOffice Calc, the shortcut key for going to the last cell on the left is:",
+        options: ["A. Shift + TAB", "B. ALT + TAB", "C. Ctrl + TAB", "D. TAB"],
+        correctAnswer: 0
+    },
+    {
+        question: "Which one of the following is not an Output Device?",
+        options: ["A. Plotter", "B. Speech synthesizer", "C. MICR", "D. Smart and intelligent terminal"],
+        correctAnswer: 2
+    },
+    {
+        question: "The first Linux kernel was released in:",
+        options: ["A. 1991", "B. 1992", "C. 1994", "D. 1984"],
+        correctAnswer: 0
+    },
+    {
+        question: "Virtual memory is:",
+        options: ["A. Part of main memory only used for swapping", "B. A technique to allow a program of size more than main memory to run", "C. Part of secondary storage used in program execution", "D. None of the above"],
+        correctAnswer: 1
+    },
+    {
+        question: "The first email was sent by:",
+        options: ["A. Ted Nelson", "B. Ray Noorda", "C. Ray Tomlinson", "D. None of the above"],
+        correctAnswer: 2
+    },
+    {
+        question: "Every time a computer starts, the operating system loads the following:",
+        options: ["A. Device Manager", "B. Windows updates", "C. Driver updates", "D. Device Drivers"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the shortcut key for inserting a cell in LibreOffice Calc?",
+        options: ["A. Ctrl + I", "B. Ctrl + Shift + I", "C. Ctrl + Alt + I", "D. Insert"],
+        correctAnswer: 1
+    },
+    {
+        question: "The operating system is responsible for:",
+        options: ["A. Management of the processor", "B. Management of the memory", "C. Management of the input/output", "D. All of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "In Impress, which menu is used to change the layout of a slide?",
+        options: ["A. Slide Show", "B. Format", "C. Tools", "D. Slide"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which of the following allows you to communicate with multiple users at the same time?",
+        options: ["A. Instant messaging", "B. Email", "C. A chat room", "D. A photo community"],
+        correctAnswer: 2
+    },
+    {
+        question: "MQTT stands for:",
+        options: ["A. MQ Telemetry Transport", "B. Message Queuing Telemetry Transport", "C. Message Query Telemetry Transport", "D. A & B"],
+        correctAnswer: 3
+    },
+    {
+        question: "An area of memory or disk that stores email messages sent by other users is called:",
+        options: ["A. Post-email", "B. Postbox", "C. Emailbox", "D. Mailbox"],
+        correctAnswer: 3
+    },
+    {
+        question: "Ping stands for:",
+        options: ["A. Packet Internet Groper", "B. Packet Interrupt Gather", "C. Pulse Interactive Gopher", "D. Packet Interactive Gopher"],
+        correctAnswer: 0
+    },
+    {
+        question: "The Internet is owned by:",
+        options: ["A. IAB", "B. IETF", "C. InterNIC", "D. None of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "An example of an operating system is:",
+        options: ["A. Chrome", "B. Edge", "C. Ubuntu", "D. None"],
+        correctAnswer: 2
+    },
+    {
+        question: "The incoming mail server of email is:",
+        options: ["A. PPP", "B. NNTP server", "C. SMTP", "D. POP3"],
+        correctAnswer: 3
+    },
+    {
+        question: "E or S means?",
+        options: ["A. East or South Zone", "B. Easy and Swift", "C. Either or Survivor", "D. None of the above"],
+        correctAnswer: 3
+    },
+    {
+        question: "In Impress, the layout of a slide can be:",
+        options: ["A. Title Only", "B. Title, Content", "C. Title, 4 Content", "D. All of these"],
+        correctAnswer: 3
+    },
+    {
+        question: "IFSC Code is:",
+        options: ["A. 11-digit alphanumeric code", "B. Indian Financial System Code", "C. Both A and B", "D. None"],
+        correctAnswer: 2
+    },
+    {
+        question: "What will be the result of =PRODUCT(7, -2)?",
+        options: ["A. 14", "B. -14", "C. 24", "D. -24"],
+        correctAnswer: 1
+    },
+    {
+        question: "In Impress, the maximum and minimum zoom size is:",
+        options: ["A. 400, 20", "B. 500, 10", "C. 3000, 5", "D. None of these"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which memory provides backup storage for instructions and data?",
+        options: ["A. Internal processor memory", "B. Primary memory", "C. Secondary memory", "D. None of these"],
+        correctAnswer: 2
+    },
+    {
+        question: "The port used by SMTP is:",
+        options: ["A. 21", "B. 23", "C. 22", "D. 25"],
+        correctAnswer: 3
+    },
+    {
+        question: "The value of a Primary Key:",
+        options: ["A. Cannot be null", "B. Can be null", "C. Can be duplicate", "D. None of these"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the name of the cloud service launched by Amazon?",
+        options: ["A. Cortana", "B. AWS (Amazon Web Services)", "C. ACS", "D. All of the above"],
+        correctAnswer: 1
+    },
+    {
+        question: "The convenient place to store contact information for quick retrieval is:",
+        options: ["A. Address box", "B. Message box", "C. Address book", "D. None"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which one of the following is a secondary storage device?",
+        options: ["A. CD-ROM", "B. RAM", "C. Both A & B", "D. None of the above"],
+        correctAnswer: 0
+    }
+];
+
+
+
+       const quizContainer = document.getElementById("quiz");
+        const resultContainer = document.getElementById("result");
+        const progressBar = document.getElementById("progress");
+        let answeredQuestions = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
+        const userAnswers = new Array(questions.length).fill(null); // Track user answers
+
+        // Create the quiz HTML
+        function generateQuiz() {
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question-container");
+
+                const questionTitle = document.createElement("div");
+                questionTitle.classList.add("question");
+                questionTitle.innerText = `${index + 1}. ${q.question}`;
+                questionDiv.appendChild(questionTitle);
+
+                const optionsList = document.createElement("div");
+                optionsList.classList.add("options-container");
+
+                q.options.forEach((option, i) => {
+                    const optionItem = document.createElement("div");
+                    optionItem.classList.add("option");
+                    optionItem.innerText = option;
+                    optionItem.addEventListener("click", () => checkAnswer(index, i, optionItem));
+                    optionsList.appendChild(optionItem);
+                });
+
+                questionDiv.appendChild(optionsList);
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        // Check the answer
+        function checkAnswer(questionIndex, selectedOptionIndex, selectedElement) {
+            const question = questions[questionIndex];
+
+            if (userAnswers[questionIndex] === null) {
+                userAnswers[questionIndex] = selectedOptionIndex;
+
+                // Create a span element to display "Correct" or "Incorrect"
+                const resultSpan = document.createElement("span");
+                resultSpan.classList.add("result-text"); // Add a class for styling
+                resultSpan.style.float = "right"; // Align to the right
+                resultSpan.style.marginLeft = "10px"; // Add spacing
+                resultSpan.style.fontWeight = "bold"; // Make it bold
+
+                if (selectedOptionIndex === question.correctAnswer) {
+                    correctAnswers++;
+                    resultSpan.innerText = "✅ Correct"; // Add "Correct" text
+                    resultSpan.style.color = "green"; // Green color for correct
+                    selectedElement.classList.add("correct");
+                } else {
+                    wrongAnswers++;
+                    resultSpan.innerText = "❌ Incorrect"; // Add "Incorrect" text
+                    resultSpan.style.color = "red"; // Red color for incorrect
+                    selectedElement.classList.add("incorrect");
+
+                    // Show correct answer immediately for wrong selections
+                    const correctOptionIndex = question.correctAnswer;
+                    const optionsContainer = selectedElement.parentElement;
+                    const correctOptionElement = optionsContainer.children[correctOptionIndex];
+
+                    // Add "Correct" to the correct option
+                    const correctSpan = document.createElement("span");
+                    correctSpan.classList.add("result-text");
+                    correctSpan.innerText = "✅ Correct";
+                    correctSpan.style.float = "right";
+                    correctSpan.style.marginLeft = "10px";
+                    correctSpan.style.color = "green";
+                    correctSpan.style.fontWeight = "bold";
+                    correctOptionElement.appendChild(correctSpan);
+                    correctOptionElement.classList.add("correct");
+                }
+
+                // Append the result span to the selected option
+                selectedElement.appendChild(resultSpan);
+            }
+
+            // Disable further clicks on options
+            const options = selectedElement.parentElement.children;
+            Array.from(options).forEach(option => option.style.pointerEvents = 'none');
+
+            answeredQuestions++;
+            updateProgressBar();
+            toggleSubmitButton();
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const progress = (answeredQuestions / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Enable/Disable the submit button
+        function toggleSubmitButton() {
+            const submitButton = document.getElementById('submitBtn');
+            if (answeredQuestions === questions.length) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // Submit quiz
+        function submitQuiz() {
+            const totalMarks = correctAnswers;
+            const attemptedQuestions = answeredQuestions;
+
+            document.getElementById('totalMarks').innerText = `Total Marks: ${totalMarks}`;
+            document.getElementById('correctAnswers').innerText = `Correct Answers: ${correctAnswers}`;
+            document.getElementById('wrongAnswers').innerText = `Wrong Answers: ${wrongAnswers}`;
+            document.getElementById('attemptedQuestions').innerText = `Attempted Questions: ${attemptedQuestions}`;
+            // Calculate Grade
+            let grade = '';
+            const percentage = (correctAnswers / questions.length) * 100;
+            if (percentage >= 90) grade = 'A';
+            else if (percentage >= 75) grade = 'B';
+            else if (percentage >= 50) grade = 'C';
+            else grade = 'F';
+            document.getElementById('grade').innerText = `Grade: ${grade}`;
+
+            // Display which questions were correct and which were wrong
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Question-wise Results:</strong>";
+            questions.forEach((q, index) => {
+                const resultDiv = document.createElement("div");
+                resultDiv.classList.add("question-result");
+                if (userAnswers[index] === q.correctAnswer) {
+                    resultDiv.classList.add("correct");
+                    resultDiv.innerText = `${index + 1}. Correct: ${q.question}`;
+                } else {
+                    resultDiv.classList.add("incorrect");
+                    resultDiv.innerText = `${index + 1}. Incorrect: ${q.question} (Correct Answer: ${q.options[q.correctAnswer]})`;
+                }
+                questionResults.appendChild(resultDiv);
+            });
+
+            // Show the "Show Correct/Incorrect" buttons
+            document.getElementById("showCorrectBtn").style.display = 'block';
+            document.getElementById("showIncorrectBtn").style.display = 'block';
+
+            resultContainer.style.display = 'block';
+        }
+
+        // Show Correct Answers
+        function showCorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Correct Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] === q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "correct");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Correct: ${q.options[q.correctAnswer]}`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Show Incorrect Answers
+        function showIncorrectAnswers() {
+            const questionResults = document.getElementById('questionResults');
+            questionResults.innerHTML = "<strong>Incorrect Answers:</strong>";
+            questions.forEach((q, index) => {
+                if (userAnswers[index] !== q.correctAnswer) {
+                    const resultDiv = document.createElement("div");
+                    resultDiv.classList.add("question-result", "incorrect");
+                    resultDiv.innerText = `${index + 1}. ${q.question} - Incorrect: ${q.options[userAnswers[index]]} (Correct: ${q.options[q.correctAnswer]})`;
+                    questionResults.appendChild(resultDiv);
+                }
+            });
+        }
+
+        // Initialize the quiz
+        generateQuiz();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const closeButton = document.getElementById('close-button');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            // Toggle mobile menu
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.add('active');
+                closeButton.style.display = 'block';
+                mobileMenu.style.display = 'none';
+            });
+
+            // Close mobile menu
+            closeButton.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                closeButton.style.display = 'none';
+                mobileMenu.style.display = 'flex';
+                
+                // Close all dropdowns when closing the menu
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            });
+
+            // Toggle dropdowns on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other dropdowns when opening one
+                        if (dropdown.classList.contains('active')) {
+                            dropdowns.forEach(otherDropdown => {
+                                if (otherDropdown !== dropdown) {
+                                    otherDropdown.classList.remove('active');
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                    if (!navLinks.contains(e.target) && 
+                        !mobileMenu.contains(e.target) && 
+                        !closeButton.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        closeButton.style.display = 'none';
+                        mobileMenu.style.display = 'flex';
+                        
+                        // Close all dropdowns
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+        });
+       
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault(); // Prevent default link behavior
+        const parent = link.parentElement;
+        parent.classList.toggle('open');
+    });
+});
+
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+
+         const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const closeButton = document.getElementById('close-button');
+
+        // Add event listener for the mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Check if the nav links are active
+            if (navLinks.classList.contains('active')) {
+                closeButton.style.display = 'block'; // Show close button
+                mobileMenu.style.display = 'none'; // Hide mobile menu toggle button
+            } else {
+                closeButton.style.display = 'none'; // Hide close button
+                mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+            }
+        });
+
+        // Add event listener for the close button
+        closeButton.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Remove active class from nav links
+            closeButton.style.display = 'none'; // Hide close button
+            mobileMenu.style.display = 'block'; // Show mobile menu toggle button
+        });
+    </script>
+
+</body>
+</html>

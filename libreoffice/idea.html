@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibreOffice Writer Shortcuts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e88e5;
+            --light-bg: #f5f9ff;
+            --white: #ffffff;
+            --text: #333333;
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text);
+            padding: 20px;
+        }
+
+        .container {
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        .controls {
+            padding: 15px 20px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box {
+            flex-grow: 1;
+            padding: 8px 15px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .category-filter {
+            padding: 8px 15px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .shortcut-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .shortcut-table th {
+            background: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .shortcut-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .shortcut-table tr:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        .shortcut-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        .key {
+            display: inline-block;
+            padding: 3px 8px;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+            margin: 2px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .category {
+            font-weight: 500;
+            color: var(--primary);
+            margin: 20px 0 10px 0;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LibreOffice Writer Shortcut Keys</h1>
+        </header>
+
+        <div class="controls">
+            <input type="text" class="search-box" placeholder="Search shortcuts..." id="searchInput">
+            <select class="category-filter" id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="general">General</option>
+                <option value="editing">Editing</option>
+                <option value="navigation">Navigation</option>
+                <option value="tables">Tables</option>
+                <option value="document">Document</option>
+                <option value="special">Special</option>
+                <option value="view">View</option>
+            </select>
+        </div>
+
+        <div id="shortcutContainer">
+            <!-- General Shortcuts -->
+            <h2 class="category">General Shortcuts</h2>
+            <table class="shortcut-table" data-category="general">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">N</span></td>
+                        <td>Create a new document</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">O</span></td>
+                        <td>Open an existing document</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">S</span></td>
+                        <td>Save the current document</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">S</span></td>
+                        <td>Save As (Save with a new name)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">P</span></td>
+                        <td>Print the document</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">F1</span></td>
+                        <td>Open Help</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">F5</span></td>
+                        <td>Open Navigator (for quick navigation)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">F7</span></td>
+                        <td>Open Spellcheck</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">F11</span></td>
+                        <td>Open Styles and Formatting panel</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Editing Shortcuts -->
+            <h2 class="category">Editing Shortcuts</h2>
+            <table class="shortcut-table" data-category="editing">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">C</span></td>
+                        <td>Copy selected text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">X</span></td>
+                        <td>Cut selected text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">V</span></td>
+                        <td>Paste clipboard content</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">Z</span></td>
+                        <td>Undo last action</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">Y</span></td>
+                        <td>Redo last undone action</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">F</span></td>
+                        <td>Find text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">H</span></td>
+                        <td>Find and Replace</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">B</span></td>
+                        <td>Bold text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">I</span></td>
+                        <td>Italicize text</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Navigation Shortcuts -->
+            <h2 class="category">Navigation Shortcuts</h2>
+            <table class="shortcut-table" data-category="navigation">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Home</span></td>
+                        <td>Move cursor to the start of the line</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">End</span></td>
+                        <td>Move cursor to the end of the line</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">Home</span></td>
+                        <td>Move cursor to the start of the document</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">Left</span>/<span class="key">Right</span> Arrow</td>
+                        <td>Move cursor word by word</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Table Shortcuts -->
+            <h2 class="category">Table Shortcuts</h2>
+            <table class="shortcut-table" data-category="tables">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">F12</span></td>
+                        <td>Insert a new table</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Tab</span> (inside table)</td>
+                        <td>Move to the next cell</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Alt</span> + Arrow Keys</td>
+                        <td>Resize table columns/rows</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Document Management -->
+            <h2 class="category">Document Management</h2>
+            <table class="shortcut-table" data-category="document">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">Enter</span></td>
+                        <td>Insert a Page Break</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">1</span></td>
+                        <td>Single line spacing</td>
+                    </tr>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">2</span></td>
+                        <td>Double line spacing</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Special Characters -->
+            <h2 class="category">Special Characters & Fields</h2>
+            <table class="shortcut-table" data-category="special">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + <span class="key">F2</span></td>
+                        <td>Insert Fields (Date, Time, etc.)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- View Shortcuts -->
+            <h2 class="category">View Shortcuts</h2>
+            <table class="shortcut-table" data-category="view">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="key">Ctrl</span> + Mouse Wheel</td>
+                        <td>Zoom in/out</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            LibreOffice Writer Shortcut Cheat Sheet | Last updated 2023
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const tables = document.querySelectorAll('.shortcut-table');
+            const categories = document.querySelectorAll('.category');
+
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+
+                tables.forEach(table => {
+                    const rows = table.querySelectorAll('tbody tr');
+                    let hasVisibleRows = false;
+
+                    rows.forEach(row => {
+                        const text = row.textContent.toLowerCase();
+                        const tableCategory = table.getAttribute('data-category');
+                        
+                        const matchesSearch = text.includes(searchTerm);
+                        const matchesCategory = selectedCategory === 'all' || tableCategory === selectedCategory;
+                        
+                        if (matchesSearch && matchesCategory) {
+                            row.style.display = '';
+                            hasVisibleRows = true;
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+
+                    // Show/hide entire table based on visibility
+                    const parentSection = table.closest('h2').nextElementSibling;
+                    if (hasVisibleRows && (selectedCategory === 'all' || table.getAttribute('data-category') === selectedCategory)) {
+                        table.style.display = '';
+                        table.previousElementSibling.style.display = '';
+                    } else {
+                        table.style.display = 'none';
+                        table.previousElementSibling.style.display = 'none';
+                    }
+                });
+            });
+
+            // Category filter functionality
+            categoryFilter.addEventListener('change', function() {
+                const selectedCategory = this.value;
+                const searchTerm = searchInput.value.toLowerCase();
+
+                tables.forEach(table => {
+                    const tableCategory = table.getAttribute('data-category');
+                    const shouldShow = selectedCategory === 'all' || tableCategory === selectedCategory;
+                    
+                    if (shouldShow) {
+                        table.style.display = '';
+                        table.previousElementSibling.style.display = '';
+                        
+                        // Apply search filter within visible category
+                        const rows = table.querySelectorAll('tbody tr');
+                        let hasVisibleRows = false;
+                        
+                        rows.forEach(row => {
+                            const text = row.textContent.toLowerCase();
+                            if (text.includes(searchTerm)) {
+                                row.style.display = '';
+                                hasVisibleRows = true;
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        });
+                        
+                        if (!hasVisibleRows && searchTerm !== '') {
+                            table.style.display = 'none';
+                            table.previousElementSibling.style.display = 'none';
+                        }
+                    } else {
+                        table.style.display = 'none';
+                        table.previousElementSibling.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
