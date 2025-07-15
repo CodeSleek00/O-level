@@ -1,36 +1,7 @@
 const questions = [
     {
-        "question": "Arduino program to Blink a Light Emitting Diode (LED)",
-        "answer": `void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-}`,
-        "difficulty": "easy"
-    },
-    {
-        "question": "Arduino program to fade the LED bulb using for loop",
-        "answer": `int ledPin = 9;
-
-void setup() {
-  pinMode(ledPin, OUTPUT);
-}
-
-void loop() {
-  for (int fadeValue = 0; fadeValue <= 255; fadeValue += 5) {
-    analogWrite(ledPin, fadeValue);
-    delay(30);
-  }
-  for (int fadeValue = 255; fadeValue >= 0; fadeValue -= 5) {
-    analogWrite(ledPin, fadeValue);
-    delay(30);
-  }
-}`,
+        "question": "Create a Python program to print 'Hello world!",
+        "answer": `print("Hello world!")`,
         "difficulty": "easy"
     },
     {
