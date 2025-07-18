@@ -5,7 +5,7 @@ const questions = [
         "difficulty": "easy"
     },
     {
-        "question": "Arduino program to connect a LED through push button",
+        "question": "",
         "answer": `const int buttonPin = 2;
 const int ledPin = 13;
 
